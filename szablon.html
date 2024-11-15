@@ -17,10 +17,16 @@
         box-sizing: border-box;
         font-family: "Poppins", sans-serif;
         position: relative;
+        background: white;
+        background-image: radial-gradient(
+          rgba(0, 0, 0, 0.226) 1px,
+          transparent 0
+        );
+        background-size: 40px 40px;
+        background-position: -19px -19px;
       }
       h1 {
         color: #333;
-        text-align: center;
         margin-bottom: 32px;
         font-size: 48px;
       }
@@ -34,7 +40,11 @@
         margin: 20px 0;
         transition: all 1.75s;
       }
-
+      p::first-letter {
+        font-size: 130%;
+        font-weight: bold;
+        color: #f76d6d;
+      }
       #articleContainer {
         max-width: 1100px;
         margin: 0 auto;
@@ -48,7 +58,7 @@
         top: -100px;
         left: -100px;
         pointer-events: none;
-        mix-blend-mode: color;
+        mix-blend-mode: multiply;
       }
       .hidden {
         opacity: 10%;

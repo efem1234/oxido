@@ -36,11 +36,21 @@ fetch("http://localhost:5555/getGeneratedArticle")
   })
   .catch((error) => console.error("Error fetching the article:", error));
 
+let clientScrollY = 0;
 document.addEventListener("mousemove", (event) => {
+  clientScrollY = event.clientY;
+
   const x = event.pageX + 10;
   const y = event.pageY + 10;
 
   const circle = document.querySelector("#cursorCircle");
   circle.style.left = `${x}px`;
   circle.style.top = `${y}px`;
+});
+
+document.addEventListener("scroll", (e) => {
+  const totalScroll = window.scrollY + clientScrollY;
+
+  const circle = document.querySelector("#cursorCircle");
+  circle.style.top = `${totalScroll}px`;
 });
